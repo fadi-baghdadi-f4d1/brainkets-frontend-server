@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "BeeFlex",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "Urgent",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith", "photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 2,
+    "title": "BeeFlex 2",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "High",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith","photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 3,
+    "title": "BeeFlex 3",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "Medium",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith","photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 4,
+    "title": "BeeFlex 4",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "Low",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith","photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 5,
+    "title": "BeeFlex 5",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "Urgent",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith", "photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 6,
+    "title": "BeeFlex 6",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Opened",
+    "priority": "Urgent",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith","photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  },
+  {
+    "id": 7,
+    "title": "BeeFlex 7",
+    "description": "Lorem ipsum dolor sit amet consectetur lorem ipsum.",
+    "status": "Closed",
+    "priority": "Urgent",
+    "assignees": [
+      {"name": "Nader", "photo": "https://i.pravatar.cc/150?img=1" },
+      {"name": "John Smith", "photo": "https://i.pravatar.cc/150?img=2"}
+    ],
+    "date": "Mar 20, 2024"
+  }
+]
