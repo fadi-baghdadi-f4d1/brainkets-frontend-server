@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Brain Court",
+    "image": "/Frame 8520.png",
+    "link": "https://braincourt.gameacademy.ngo"
+  },
+  {
+    "id": 2,
+    "name": "Game Academy",
+    "image": "/Frame 8520.png",
+    "link": "https://game-academy-nine.vercel.app"
+  },
+  {
+    "id": 3,
+    "name": "Inventory Management",
+    "image": "/Frame 8520.png",
+    "link": "https://example.com/projects/inventory"
+  },
+  {
+    "id": 4,
+    "name": "CRM",
+    "image": "/Frame 8520.png",
+    "link": "https://example.com/projects/crm"
+  },
+  {
+    "id": 5,
+    "name": "Human Resources",
+    "image": "/Frame 8520.png",
+    "link": "https://example.com/projects/hr"
+  }
+]

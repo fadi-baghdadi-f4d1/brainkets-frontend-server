@@ -49,8 +49,9 @@ const Footer: React.FC = () => {
                             className="absolute -right-3 bottom-full mb-2 w-48 bg-black text-white p-2 rounded-lg shadow-lg z-20">
                             <p className="py-2 px-2 border-b border-gray-500 cursor-pointer">Profile</p>
                             <p className="py-2 px-2 border-b border-gray-500 cursor-pointer">Email</p>
-                            <p className="py-2 px-2 border-b border-gray-500 cursor-pointer" >Theme</p>
+                            <Link href={"/settings"}>
                             <p className="py-2 px-2 border-b border-gray-500 cursor-pointer">Settings</p>
+                            </Link>
                             <p className="py-2 px-2 border-b border-gray-500 cursor-pointer">Groups</p>
                             <p className="py-2 px-2 border-b border-gray-500 cursor-pointer">User Roles</p>
                             <Link href={"/new_users"}>
