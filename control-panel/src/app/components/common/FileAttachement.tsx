@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState, useEffect } from 'react';
 import { FaImage, FaWindowClose } from 'react-icons/fa';
 import { IoMdAttach } from 'react-icons/io';

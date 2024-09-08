@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import { FaImage } from "react-icons/fa6";

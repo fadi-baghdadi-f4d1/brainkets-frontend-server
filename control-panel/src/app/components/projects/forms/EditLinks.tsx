@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import { editLink } from '../../../services/projects/EditLink';  // Import the editLink function

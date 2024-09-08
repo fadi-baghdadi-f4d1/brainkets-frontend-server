@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { editOption } from '../../../services/lists/EditOptionApi'; // Ensure this path is correct

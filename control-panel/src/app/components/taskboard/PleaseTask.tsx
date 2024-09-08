@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, useRef } from 'react';
 import dragula from 'react-dragula';
 import { getStatus } from "../../services/tasks/status/GetStatusApi";

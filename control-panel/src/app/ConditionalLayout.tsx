@@ -1,9 +1,7 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import Sidebar from "../app/components/Sidebar";
-import Header from "../app/components/Navbar";
-import BottomNavbar from "../app/components/Footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

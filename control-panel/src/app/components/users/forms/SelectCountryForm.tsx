@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { FaWindowClose } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";

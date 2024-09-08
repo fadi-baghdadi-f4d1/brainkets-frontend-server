@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useImperativeHandle, forwardRef, useRef, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { uploadFiles } from '../../services/tasks/UploadFiles/UploadFileApi';

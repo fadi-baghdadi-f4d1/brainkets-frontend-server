@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import { BlockPicker, CirclePicker, CompactPicker, TwitterPicker } from 'react-color';

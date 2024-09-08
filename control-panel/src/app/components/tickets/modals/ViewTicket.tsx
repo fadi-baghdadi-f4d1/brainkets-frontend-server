@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import Image from 'next/image';

@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import ProjectSettingForm from './ProjectSettings'; 
 import Link from 'next/link';
-// import useLocale from '@/hooks/useLocale';
+import useLocale from '@/hooks/useLocale';
 import { useModalContext } from '@/context/ModalContext';
 
 interface ProjectImage {
@@ -18,7 +20,7 @@ const ProjectMenu: React.FC<ProjectMenuProps> = ({ projectId, projectImage }) =>
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  // const locale = useLocale();
+  const locale = useLocale();
 
   const { toggleEditProjectModal, toggleProjectDetailsModal, toggleUsefulLinks } = useModalContext();
 

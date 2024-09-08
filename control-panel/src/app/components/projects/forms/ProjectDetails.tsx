@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import { FaWindowClose } from "react-icons/fa";
 import Image from "next/image";
@@ -8,7 +10,7 @@ import { useModalContext } from "@/context/ModalContext";
 import DropdownMenu from "./ProjectDetailsDropDown";
 import { getProjectDetails } from "@/services/projects/GetSingleProject"; // Import the function
 import defaultProject from "../../../../public/defaultBee.png";
-// import defaultProfile from "../../../../../../public/Frame 8520.png";
+import defaultProfile from "../../../../../../public/Frame 8520.png";
 import { getLinks } from "@/services/projects/GetAllLinks";
 import SkeletonLoader from "../skeleton/ProjectDetailsSekelton";
 

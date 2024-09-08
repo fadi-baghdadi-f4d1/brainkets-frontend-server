@@ -1,37 +1,3 @@
-// "use client";
-// import React, { createContext, useContext, useState, ReactNode } from 'react';
-//
-// interface ModalContextProps {
-//     isModalOpen: boolean;
-//     toggleModal: () => void;
-// }
-//
-// const ModalContext = createContext<ModalContextProps | undefined>(undefined);
-//
-// interface ModalProviderProps {
-//     children: ReactNode;
-// }
-//
-// export const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
-//     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-//
-//     const toggleModal = () => setIsModalOpen(prev => !prev);
-//
-//     const value = {
-//         isModalOpen,
-//         toggleModal,
-//     };
-//
-//     return <ModalContext.Provider value={value}>{children}</ModalContext.Provider>;
-// };
-//
-// export const useModalContext = (): ModalContextProps => {
-//     const context = useContext(ModalContext);
-//     if (context === undefined) {
-//         throw new Error('useModalContext must be used within a ModalProvider');
-//     }
-//     return context;
-// };
 "use client";
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import ProjectDetails from "@/components/projects/forms/ProjectDetails";

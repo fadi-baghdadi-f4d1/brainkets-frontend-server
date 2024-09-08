@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from 'react';
 import { addOption } from '../../../services/lists/AddOptionsApi'; // Import your API function
 import { toast } from 'react-toastify';

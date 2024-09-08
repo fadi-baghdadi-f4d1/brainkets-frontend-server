@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect, useState } from 'react';
-import Modules from "../components/Modules";
-import Chat from "../components/Chat";
-import UsersCard from "../components/UsersCard";
 
-const UserProfile: React.FC = () => {
+import { useEffect, useState  } from 'react';
+
+const UserProfile = () => {
     const [userState, setUserState] = useState<any>(null);
 
     useEffect(() => {
@@ -21,7 +19,6 @@ const UserProfile: React.FC = () => {
 
     return (
         <div className="bg-[#1B3483] h-full flex-1">
-
             <div className="w-10/12 h-[200px] xl:h-[250px] bg-cover bg-center rounded-lg mx-auto mt-8 flex flex-col justify-center items-center"
                  style={{backgroundImage: 'url("/profile/Frame 8577.svg")'}}>
                 <img src={userState.image} alt="Profile" className="w-24 xl:w-28 h-24 xl:h-28 rounded-full mb-4"/>
@@ -54,8 +51,6 @@ const UserProfile: React.FC = () => {
                     {/* Add more social media links as necessary */}
                 </div>
             </div>
-
-
         </div>
     );
 };

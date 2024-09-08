@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import beeflex from "../../../../public/bee.svg";
@@ -18,7 +19,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
     handleNavigation,
     handleProjectClick,
     handleUsefulLinksClick,
-    
+
 }) => {
     const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +49,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
                 width={45}
                 height={45}
                 className="object-cover h-10 w-10 rounded-lg cursor-pointer"
-                onClick={toggleDropdown} 
+                onClick={toggleDropdown}
             />
             <div
                 ref={dropdownRef}

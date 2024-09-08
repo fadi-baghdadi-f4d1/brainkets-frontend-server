@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useTranslations } from 'next-intl';
 import USFlag from '../../../public/navbar/Vector (1).svg';
 import FRFlag from '../../../public/navbar/Vector (1).svg';

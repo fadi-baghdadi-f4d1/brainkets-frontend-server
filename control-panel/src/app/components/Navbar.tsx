@@ -1,8 +1,8 @@
 "use client";
+
 import React, { useEffect, useState } from 'react';
 import Announcement from '/public/navbar/announcement.svg';
 import Vector from '/public/navbar/Vector (1).svg';
-import Image from "next/image";
 
 const Navbar: React.FC = () => {
     const [userState, setUserState] = useState<any>(null);

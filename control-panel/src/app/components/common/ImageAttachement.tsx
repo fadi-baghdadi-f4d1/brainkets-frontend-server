@@ -1,4 +1,6 @@
-import React, { useRef, useCallback } from 'react';
+"use client";
+
+import { useRef, useCallback, useEffect } from 'react';
 import Image from 'next/image'; // Import Image from next/image
 import { FaImage } from 'react-icons/fa6';
 import { FaWindowClose } from 'react-icons/fa';
@@ -40,7 +42,7 @@ const ImageAttachment: React.FC<ImageAttachmentProps> = ({ selectedImages, setSe
     }, []);
 
     // Revoke object URL to free memory
-    React.useEffect(() => {
+    useEffect(() => {
         return () => {
             selectedImages.forEach(file => URL.revokeObjectURL(getPreviewUrl(file)));
         };

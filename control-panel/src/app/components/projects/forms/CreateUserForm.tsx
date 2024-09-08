@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import { HiPlus } from 'react-icons/hi';

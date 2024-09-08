@@ -9,7 +9,7 @@ const Layout: React.FC = () => {
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
-            <UsersContent className="flex-1" /> {/* Ensure UsersContent has flex-1 */}
+            <UsersContent /> {/* Ensure UsersContent has flex-1 */}
             <Footer />
         </div>
     );

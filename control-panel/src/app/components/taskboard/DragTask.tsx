@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
 import dragula from 'dragula';
 import { getStatus } from "../../services/tasks/status/GetStatusApi";
@@ -11,15 +13,14 @@ import { HiDotsVertical } from "react-icons/hi";
 import Portal from "./Portal";
 
 interface DragTaskProps {
-  projectId: number | null; 
+  projectId: number | null;
 }
-
 
 const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
   const [statuses, setStatuses] = useState<Status[]>([]);
   const [tasksByStatus, setTasksByStatus] = useState<{ [key: number]: Task[] }>({});
   const [loading, setLoading] = useState<boolean>(true);
-  const [selectedTask, setSelectedTask] = useState<Task | null>(null); 
+  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
   const [isViewTaskModalOpen, setIsViewTaskModalOpen] = useState<boolean>(false);
   const [selectedStatus, setSelectedStatus] = useState<number | null>(null);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -37,28 +38,25 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
     setShowMenu(!showMenu);
     setMenuPosition({ top: event.clientY, left: event.clientX });
   };
-  
+
   const handleEditTask = (task: Task, event: React.MouseEvent) => {
-    setSelectedTask(task); 
-    setEditTaskModalOpen(true); 
-    event.stopPropagation(); 
+    setSelectedTask(task);
+    setEditTaskModalOpen(true);
+    event.stopPropagation();
   };
-  
-  
-  
+
 
   const handleResize = () => {
-    if (window.innerWidth <= 1220) { 
+    if (window.innerWidth <= 1220) {
       setIsSmallScreen(true);
       if (!selectedStatus && statuses.length > 0) {
         setSelectedStatus(statuses[0].id);
       }
     } else {
       setIsSmallScreen(false);
-      setSelectedStatus(null); 
+      setSelectedStatus(null);
     }
   };
-
 
   const closeEditTaskModal = () => {
     setEditTaskModalOpen(false);
@@ -154,12 +152,10 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
   };
 
 
-
-
   if (loading) {
     // Ensure statuses is always an array (even if empty)
     const skeletonStatuses = statuses.length > 0 ? statuses : [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
-  
+
     return (
       <div className="p-4">
         <div className="flex gap-4 p-4">
@@ -177,9 +173,6 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
       </div>
     );
   }
-  
-  
-  
 
   return (
     <div className="p-4">
@@ -202,11 +195,6 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
           </button>
         ))}
       </div>
-
-
-
-
-
 
       {/* Display Columns on Large Screens or Selected Tasks on Small Screens */}
       <div className="flex gap-4 p-4">
@@ -231,61 +219,59 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
                 <h2 className="text-xl font-semibold handle">{status.name}</h2>
                 <span className="text-black bg-[#E7E7E7] py-1 px-3 rounded-md mx-2 text-xs">
                   {tasksByStatus[status.id]?.length}
-          </span>
+                </span>
               </div>
               {tasksByStatus[status.id]?.map((task) => (
-            <div
-            key={task.id}
-            data-task-id={task.id}
-            onClick={() => openViewTaskModal(task)}
-            style={{ backgroundColor: task.highlight ? task.highlight : '#f4f4f4' }}
-            className="task-card relative rounded-lg shadow-md p-4 mb-4 transition-transform transform hover:scale-95 cursor-pointer"
-          >
-          
-             
+                <div
+                  key={task.id}
+                  data-task-id={task.id}
+                  onClick={() => openViewTaskModal(task)}
+                  style={{ backgroundColor: task.highlight ? task.highlight : '#f4f4f4' }}
+                  className="task-card relative rounded-lg shadow-md p-4 mb-4 transition-transform transform hover:scale-95 cursor-pointer"
+                >
                   <div
                     className="absolute left-0 top-0 bottom-0 w-1.5 rounded-l-lg"
                     style={{ backgroundColor: status.color || "black" }}
                   ></div>
                   <div className='flex flex-row justify-between'>
-                  <h3 className="font-bold text-xl">{task.title}</h3>
-                  <div className="relative">
-  <div className="flex flex-row z-80 right-0 group-hover:visible transition-opacity duration-300">
-    <button onClick={(event) => handleEditTask(task, event)} className="transform right-3 text-black">
-      <CiEdit size={20} />
-    </button>
-    <div className="ml-4">
-      <HiDotsVertical
-        className="text-xl cursor-pointer"
-        onClick={(event) => toggleMenu(event, task)} // Pass task here
-      />
-    </div>
-    {showMenu && currentTaskId === task.id && (
-  <Portal>
-    <div
-      ref={menuRef}
-      style={{
-        position: "absolute",
-        top: `${menuPosition.top}px`,
-        left: `${menuPosition.left}px`,
-      }}
-      onClick={(e) => e.stopPropagation()}
-    >
-      <TaskMenu 
-        task={selectedTask} // Ensure this is the updated task
-        entityId={currentTaskId} 
-        entityType="task" 
-        modalType="task" 
-        showMenu={showMenu} 
-        toggleMenu={toggleMenu} 
-      />
-    </div>
-  </Portal>
-)}
+                    <h3 className="font-bold text-xl">{task.title}</h3>
+                    <div className="relative">
+                      <div className="flex flex-row z-80 right-0 group-hover:visible transition-opacity duration-300">
+                        <button onClick={(event) => handleEditTask(task, event)} className="transform right-3 text-black">
+                          <CiEdit size={20} />
+                        </button>
+                        <div className="ml-4">
+                          <HiDotsVertical
+                            className="text-xl cursor-pointer"
+                            onClick={(event) => toggleMenu(event, task)} // Pass task here
+                          />
+                        </div>
+                        {showMenu && currentTaskId === task.id && (
+                          <Portal>
+                            <div
+                              ref={menuRef}
+                              style={{
+                                position: "absolute",
+                                top: `${menuPosition.top}px`,
+                                left: `${menuPosition.left}px`,
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <TaskMenu
+                                task={selectedTask} // Ensure this is the updated task
+                                entityId={currentTaskId}
+                                entityType="task"
+                                modalType="task"
+                                showMenu={showMenu}
+                                toggleMenu={toggleMenu}
+                              />
+                            </div>
+                          </Portal>
+                        )}
 
 
-  </div>
-</div>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="flex items-center mt-2">
@@ -318,61 +304,61 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
                       {task.assignee.firstName} {task.assignee.lastName}
                     </span>
                   </div>
-                 
+
                   <div className='flex flex-row items-end justify-end'>
-                  <div className="flex justify-between items-center mt-2 mr-1">
-                  {task.hasComments === true && (
-                      <div className="bg-[#D1F0CC] rounded-full p-1">
-                        <img
-                          src="/comment.svg"
-                          alt="comment"
-                          className="w-4 h-4"
-                        />
-                      </div>
-                    )}
-                    {task.attachments.length > 0 && (
-                      <div className="bg-white rounded-full p-1">
-                        <img
-                          src="/attach.svg"
-                          alt="Attachments"
-                          className="w-4 h-4"
-                        />
-                      </div>
-                    )}
-             
-             
+                    <div className="flex justify-between items-center mt-2 mr-1">
+                      {task.hasComments === true && (
+                        <div className="bg-[#D1F0CC] rounded-full p-1">
+                          <img
+                            src="/comment.svg"
+                            alt="comment"
+                            className="w-4 h-4"
+                          />
+                        </div>
+                      )}
+                      {task.attachments.length > 0 && (
+                        <div className="bg-white rounded-full p-1">
+                          <img
+                            src="/attach.svg"
+                            alt="Attachments"
+                            className="w-4 h-4"
+                          />
+                        </div>
+                      )}
 
-                  </div>
-                      <div
-                        className={`flex items-center text-white rounded-xl py-1 px-2 ${task.priority === 'urgent'
-                            ? 'bg-red-600'
-                            : task.priority === 'high'
-                              ? 'bg-red-500'
-                              : task.priority === 'medium'
-                                ? 'bg-blue-500'
-                                : task.priority === 'low'
-                                  ? 'bg-yellow-500'
-                                  : 'bg-gray-300'
-                          }`}
-                      >
-                        <span className="text-xs">{task.priority}</span>
-                      </div>
 
-                      <div className="text-xs text-gray-500 flex items-center rounded-xl mx-1 p-1 bg-white">
-                        <img
-                          src="/calendar.svg"
-                          alt="calendar"
-                          className="w-3 h-3 mr-1"
-                        />
-                        {new Intl.DateTimeFormat('en-US', {
-                          month: 'short',
-                          day: '2-digit',
-                          year: 'numeric',
-                        }).format(new Date(task.createdDate))}
-                      </div>
+
                     </div>
+                    <div
+                      className={`flex items-center text-white rounded-xl py-1 px-2 ${task.priority === 'urgent'
+                        ? 'bg-red-600'
+                        : task.priority === 'high'
+                          ? 'bg-red-500'
+                          : task.priority === 'medium'
+                            ? 'bg-blue-500'
+                            : task.priority === 'low'
+                              ? 'bg-yellow-500'
+                              : 'bg-gray-300'
+                        }`}
+                    >
+                      <span className="text-xs">{task.priority}</span>
+                    </div>
+
+                    <div className="text-xs text-gray-500 flex items-center rounded-xl mx-1 p-1 bg-white">
+                      <img
+                        src="/calendar.svg"
+                        alt="calendar"
+                        className="w-3 h-3 mr-1"
+                      />
+                      {new Intl.DateTimeFormat('en-US', {
+                        month: 'short',
+                        day: '2-digit',
+                        year: 'numeric',
+                      }).format(new Date(task.createdDate))}
+                    </div>
+                  </div>
                 </div>
-                
+
               ))}
             </div>
           ) : null
@@ -389,18 +375,16 @@ const DragTask: React.FC<DragTaskProps> = ({ projectId }) => {
       )}
 
       {editTaskModalOpen && (
-         <div className="fixed inset-0 flex items-end justify-end bg-black bg-opacity-50 z-50">
-        <EditTaskModal
-          actiontype="edit"
-          task={selectedTask}
-          onClose={closeEditTaskModal}
-        />
-      </div>
+        <div className="fixed inset-0 flex items-end justify-end bg-black bg-opacity-50 z-50">
+          <EditTaskModal
+            actiontype="edit"
+            task={selectedTask}
+            onClose={closeEditTaskModal}
+          />
+        </div>
       )}
     </div>
   );
 };
-
-
 
 export default DragTask;
